@@ -1,0 +1,21 @@
+<%= form_with model: @production do |form| %>
+
+  <p>
+    <%= form.label :Turnover %>
+    <%= form.text_field :turnover %>
+  </p>
+
+  <p>
+    <%= form.label :Name %>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :Movies_Count %>
+    <%= form.text_field :movies_count %>
+  </p>
+
+  <p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', production_companies_path %></p>

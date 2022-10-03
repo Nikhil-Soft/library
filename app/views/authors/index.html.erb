@@ -1,0 +1,31 @@
+<h1 class="text-danger">All Author</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+			<th>Phone Number</th>
+			<th>Bio</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @authors.each do |author| %>
+			<tr>
+				<td><strong><%= author.id %></strong></td>
+				<td><strong>Name: </strong> <%= author.name %></td>
+				<td><strong>Phone Number: </strong> <%= author.phone_number %></td>
+				<td><strong>Bio: </strong> <%=author.bio%></td>
+				
+				<td><%= link_to 'Show', author_path(author) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+
+
+<p><%= link_to 'New', new_author_path %></p>
+<p><%= link_to 'All Books', books_path %></p>
+
+

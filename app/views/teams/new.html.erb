@@ -1,0 +1,16 @@
+
+<%= form_with model: @team do |form| %>
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :Player_Name %>
+		<%= form.text_field :player %>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', teams_path %></p>

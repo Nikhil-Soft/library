@@ -1,0 +1,27 @@
+<h1 class="text-danger">All Appointments</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Physician Name</th>
+			<th>Patient Name</th>
+			<th>Appointment Dates</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @appointments.each do |appointment| %>
+			<tr>
+				<td><strong><%= appointment.id %></strong></td>
+				<td><%= appointment.physician.name %></td>
+				<td><%= appointment.patient.name %></td>
+				<td><%= appointment.appointment_date %></td>
+				<td><%= link_to 'Show', appointment_path(appointment) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+
+
+<p><%= link_to 'New Appointment', new_appointment_path %></p>

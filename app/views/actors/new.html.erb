@@ -1,0 +1,28 @@
+
+
+
+<%= form_with model: @actor do |form| %>
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :Movies_Count %>
+		<%= form.text_field :movies_count %>
+	</p>
+
+	<p>
+		<%= form.label :Age %>
+		<%= form.text_field :age %>
+	</p>
+
+	<p>
+		<%= form.label :Experiences %>
+		<%= form.text_field :experiences %>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', actors_path %></p>

@@ -1,0 +1,53 @@
+
+<h1>Show Production</h1>
+
+<p>
+	<strong>Turnover: </strong> <%= @production.turnover %>
+</p>
+
+<p>
+	<strong>Name: </strong> <%= @production.name %>
+</p>
+
+<p>
+	<strong>Movies Count: </strong> <%= @production.movies_count %>
+</p>
+
+
+<ul class="name-img">
+	<%@picture.each do |picture|%>
+	<li>
+		<% if picture.image.present? %>
+		 <%= image_tag picture.image, size: '100x100' , style: "object-fit:cover" %>
+		<%else%>
+			<%= image_tag '/assets/default.jpeg', size: '100x100', style: "border: 6px solid yellowgreen"%>
+		<%end%>
+		<div><small><b>Name:</b></small><%= picture.name %></div>
+	</li>
+	<%end%>
+</ul>
+
+<br>
+<hr>
+
+
+<%=render partial: "pictures/form", locals: {production: @production}%>
+<br>
+<div><%= link_to 'Back', production_companies_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+
+<style type="text/css">
+	.name-img{
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-gap: 10px;
+	}
+	.name-img li {
+		display: block;
+		text-align: left;
+		border:  1px solid #666;
+		padding: 6px;
+	}
+</style>

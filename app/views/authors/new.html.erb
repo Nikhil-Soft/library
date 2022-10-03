@@ -1,0 +1,39 @@
+<h1>New Author</h1>
+
+<% if @author.errors.any? %>
+	<div id="errors_explaination">
+		<h2><%= pluralize(@author.errors.count, "Count") %>
+			prohibited persons from being saved:
+		</h2>
+		<ul>
+			<% @author.errors.full_messages.each do |error| %>
+				<li>
+					<%= error %>
+				</li>	
+			<%end%>
+		</ul>
+	</div>
+<%end%>
+
+<%= form_with model: @author do |form| %>
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :phone_number %>
+		<%= form.text_field :phone_number %>
+	</p>
+
+
+	<p>
+		<%= form.label :Bio %>
+		<%= form.text_field :bio %>
+	</p>
+
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', authors_path %></p>

@@ -1,0 +1,59 @@
+
+<h1>Show Actor</h1>
+
+<p>
+	<strong>Name: </strong> <%= @actor.name %>
+</p>
+
+<p>
+	<strong>Movies Count: </strong> <%= @actor.movies_count %>
+</p>
+
+
+<p>
+	<strong>Age: </strong> <%= @actor.age %>
+</p>
+
+<p>
+	<strong>Experiences: </strong> <%= @actor.experiences %>
+</p>
+
+
+<ul class="name-img">
+	<%@profile_picture.each do |picture|%>
+	<li>
+		<% if picture.image.present? %>
+		 <%= image_tag picture.image, size: '100x100' , style: "object-fit:cover" %>
+		<%else%>
+			<%= image_tag '/assets/default.jpeg', size: '100x100', style: "border: 6px solid yellowgreen"%>
+		<%end%>
+		<div><small><b>Name:</b></small><%= picture.name %></div>
+	</li>
+	<%end%>
+</ul>
+
+
+<br>
+<hr>
+
+<%=render partial: "pictures/form", locals: {actor: @actor}%>
+
+<br>
+<div><%= link_to 'Back', actors_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+
+<style type="text/css">
+	.name-img{
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-gap: 10px;
+	}
+	.name-img li {
+		display: block;
+		text-align: left;
+		border:  1px solid #666;
+		padding: 6px;
+	}
+</style>

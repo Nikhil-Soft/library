@@ -1,0 +1,21 @@
+<% if @actor %>
+	<%= form_with(model: [actor, Picture.new]) do |f| %>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br><br>
+		<%= f.label :picture %><br>
+		<%= f.file_field :image %><br><br>
+		<br>
+		<%= f.submit %>
+
+	<%end%>
+<%else%>
+	<%= form_with(model: [production, Picture.new]) do |f| %>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %><br><br>
+		<%= f.label :picture %><br>
+		<%= f.file_field :image %><br><br>
+		<br>
+		<%= f.submit %>
+
+	<%end%>
+<%end%>

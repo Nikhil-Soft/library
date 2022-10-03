@@ -1,0 +1,19 @@
+
+<h1>Show Appointments</h1>
+
+<p>
+	<strong>Physicain Name: </strong> <%= @appointment.physician.name %>
+</p>
+
+<p>
+	<strong>Patient Name: </strong> <%= @appointment.patient.name %>
+</p>
+
+<p>
+	<strong>Appointment Date: </strong> <%= @appointment.appointment_date %>
+</p>
+
+
+<div><%= link_to 'Back', appointments_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+

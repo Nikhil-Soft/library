@@ -1,0 +1,37 @@
+<% if @patient %>
+<%= form_with model: [@patient, @patient.appointments.build] do |form| %>
+
+	<p>
+		<%= form.label :Physician_name %>
+		<%= form.select :physician_id, options_for_select(Physician.all.map{|b| [b.name, b.id]}) %>
+	</p>
+
+	<p>
+		<%= form.label :Date %>
+		<%= form.date_field :appointment_date%>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+<% else %>
+<%= form_with model: @appointment do |form| %>
+
+	<p>
+		<%= form.label :Physician_name %>
+		<%= form.select :physician_id, options_for_select(Physician.all.map{|b| [b.name, b.id]}) %>
+	</p>
+
+	<p>
+		<%= form.label :Patient_name %>
+		<%= form.select :patient_id, options_for_select(Patient.all.map{|b| [b.name, b.id]}) %>
+	</p>
+
+	<p>
+		<%= form.label :Date %>
+		<%= form.date_field :appointment_date%>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+<% end %>
+<p><%= link_to 'Back', appointments_path %></p>

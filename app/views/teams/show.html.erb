@@ -1,0 +1,24 @@
+
+<h1>Show Teams</h1>
+
+<p>
+	<strong>Name: </strong> <%= @team.name %>
+</p>
+
+<p>
+	<strong>Player: </strong> <%= @team.player %>
+</p>
+
+<h4>Sponsors</h4>
+
+<% @team.sponsors.each do |sponsor| %>
+  <%= sponsor.name %><br>
+<% end %>
+
+
+<p><%= link_to 'Assign_sponsor', edit_team_path(@team) %></p>
+
+
+<div><%= link_to 'Back', teams_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+

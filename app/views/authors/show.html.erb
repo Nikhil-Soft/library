@@ -1,0 +1,44 @@
+<h1>Show Author</h1>
+<p>
+	<strong>Name: </strong> <%= @author.name %>
+</p>
+
+<p>
+	<strong>User Name: </strong> <%= @author.phone_number %>
+</p>
+
+<p>
+	<strong>Role: </strong> <%= @author.bio %>
+</p>
+
+<h1 class="text-danger">All Books</h1>
+
+<div>
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+			<th>Decription</th>
+			<th>Price</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @author.books.each do |book| %>
+			<tr>
+				<td><strong><%= book.id %></strong></td>
+				<td><strong>Name: </strong> <%= book.name %></td>
+				<td><strong>Decription: </strong> <%= book.decription %></td>
+				<td><strong>Price: </strong> <%=book.price%></td>
+				
+				<td><%= link_to 'Show', author_book_path(book) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+</div>
+
+<div><%= link_to 'Back', authors_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+<p><%= link_to "New Book", new_author_book_path(@author) %></p>

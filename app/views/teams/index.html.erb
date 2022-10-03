@@ -1,0 +1,28 @@
+<h1 class="text-danger">All Teams</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" width="200px">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+			<th>Player</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @teams.each do |team| %>
+			<tr>
+				<td><strong><%= team.id %></strong></td>
+				<td><%= team.name %></td>
+				<td><%= team.player %></td>
+				<td><%= link_to 'Show', team_path(team) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+
+<p><%= link_to 'New Team', new_team_path %></p>
+<p><%= link_to 'All Sponsor', sponsors_path %></p>
+<p><%= link_to 'New Sponsor', new_sponsor_path %></p>
+
+

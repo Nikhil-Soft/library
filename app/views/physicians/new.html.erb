@@ -1,0 +1,12 @@
+
+
+<%= form_with model: @physician do |form| %>
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', physicians_path %></p>

@@ -1,0 +1,14 @@
+
+
+<%= form_with model: @patient do |form| %>
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'New Patient', new_patient_path %></p>
+
+<p><%= link_to 'Back', patients_path %></p>

@@ -1,0 +1,22 @@
+<h1 class="text-danger">All Sponsors</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" width="200px">
+	<thead>
+		<tr>
+			<th> SN </th>
+			<th> Name </th>
+			<th> Turnover </th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @sponsors.each do |sponsor| %>
+			<tr>
+				<td><strong><%= sponsor.id %></strong></td>
+				<td><%= sponsor.name %></td>
+				<td><%= sponsor.turnover %></td>
+				<td><%= link_to 'Show', sponsor_path(sponsor) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>

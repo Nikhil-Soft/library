@@ -1,0 +1,22 @@
+<h1 class="text-danger">All Patients</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+
+		</tr>
+	</thead>
+	<tbody>
+		<% @patients.each do |patient| %>
+			<tr>
+				<td><strong><%= patient.id %></strong></td>
+				<td><strong>Name: </strong> <%= patient.name %></td>
+				<td><%= link_to 'Show', patient_path(patient) %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>
+
+<p><%= link_to 'New Patient', new_patient_path %></p>

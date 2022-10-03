@@ -1,0 +1,25 @@
+
+<h1>Show Sponsors</h1>
+
+<p>
+	<strong>Name: </strong> <%= @sponsor.name %>
+</p>
+
+<p>
+  <strong>Turnover: </strong> <%= @sponsor.turnover %>
+</p>
+
+<h4>Sponsers</h4>
+
+<% @sponsor.teams.each do |team| %>
+  <%= team.name %><br>
+<% end %>
+
+<p><%= link_to 'Assign_team', edit_sponsor_path(@sponsor) %></p>
+
+<p><%= link_to 'Edit Turnover', {:action => "edit", :controller => "sponsors", :sponsor_id => @sponsor.id, :flag => true}%></p>
+
+
+<div><%= link_to 'Back', sponsors_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
+

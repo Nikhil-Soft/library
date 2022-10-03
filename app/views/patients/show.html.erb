@@ -1,0 +1,12 @@
+
+<h1>Show Patient</h1>
+<p>
+	<strong>Name: </strong> <%= @patient.name %>
+</p>
+
+<p><%= link_to 'Create an Appointment', new_patient_appointment_path(@patient) %></p>
+
+
+
+<div><%= link_to 'Back', patients_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
+<hr>
