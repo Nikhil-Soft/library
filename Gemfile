@@ -83,3 +83,5 @@ gem 'active_admin_flat_skin'
 gem 'font-awesome-rails'
 
 gem "letter_opener", group: :development
+
+gem 'razorpay'
