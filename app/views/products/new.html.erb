@@ -1,0 +1,23 @@
+
+
+<%= form_with model: @product do |form| %>
+
+	<p>
+		<%= form.label :Category %>
+		<%= form.select :category_id, options_for_select(Category.all.map{|b| [b.name, b.id]}) %>
+	</p>
+
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :Price %>
+		<%= form.text_field :price %>
+	</p>
+
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', products_path %></p>

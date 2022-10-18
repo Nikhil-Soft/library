@@ -13,6 +13,15 @@ Rails.application.routes.draw do
 
   resources :books
 
+  resources :products
+
+  post 'cart_items', to: "cart_items#create", as: 'cart_items'
+  put 'increment', to: "cart_items#increment", as: 'increment'
+  put 'decrement', to: "cart_items#decrement", as: 'decrement'
+  delete 'destroy', to: "cart_items#destroy", as: 'destroy'
+
+  get 'cart', to:"carts#show", as: 'cart'
+
   resources :physicians
   resources :patients
   resources :appointments

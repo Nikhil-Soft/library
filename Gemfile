@@ -85,3 +85,4 @@ gem 'font-awesome-rails'
 gem "letter_opener", group: :development
 
 gem 'razorpay'
+gem 'pry'

@@ -1,0 +1,27 @@
+<h1 class="text-danger">All Products</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" >
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Show</th>
+			<th>Add To Cart</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+			<tr>
+				<td><strong><%= product.id %></strong></td>
+				<td><strong>Name: </strong> <%= product.name %></td>
+				<td><strong>Name: </strong> <%= product.price %></td>
+				<td><%= link_to 'Show', product_path(product) %></td>
+				<td><%= button_to 'Add Item', cart_items_path(product_id: product.id) %></td>
+			</tr>
+		<%end%>	
+	</tbody>
+</table>
+
+<p><%= link_to 'New Product', new_product_path %></p>
+<p><%= link_to 'Go to cart', cart_path %></p>	
