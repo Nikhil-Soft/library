@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between align-item-flex">
+	<h1 class="text-danger">Daily Expenses</h1>
+</div>
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" style="max-width: 1000px; width: 100%; margin: 0 auto;" >
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Details</th>
+			<th>Expenses</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @daily.order('date DESC').each do |daily| %>
+			<tr>
+				<td><%= daily.date.strftime('%e-%b-%Y') %> </td> 
+				<td><%= daily.date.strftime('%I:%M%p') %></td>
+				<td><%= daily.details %> </td>
+				<td><%= daily.expenses %> </td>
+ </td>
+			</tr>
+		<%end%>
+		<tr>
+			<td > Remaining Salary : <strong> <%= @remaining = @user.salary.present? ? (@user.salary - params[:monthly]) : "Nil" %> </strong> </td>
+			<td colspan="5" align="right"> Monthly Total : <strong> <%= params[:monthly] %> </strong> </td> 
+		</tr>
+	</tbody>
+</table>

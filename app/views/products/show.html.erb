@@ -11,13 +11,12 @@
 
 
 <div><%= link_to 'Back', products_path, style: 'background-color: teal; padding: 6px 8px;border-radius: 6px; border: 1px solid #f00; color: #fff;text-transform:uppercase;text-decoration:none' %></div>
-<hr>
 
-<% @product.cart_item.each do |item| %>
-	price : <%= item.product.price %><br><br>	
-	subtotal : <%= item.product.price*item.quantity %><br><br>
-    quantity: <%= item.quantity %><br>
+<!-- 
+<%#@product.cart_item.each do |item| %>
+	price : <%#=item.product.price %><br><br>	
+	subtotal : <%#=item.product.price*item.quantity %><br><br>
+    quantity: <%#= item.quantity %><br>
     <br>
-<% end %>
-
-
+<%#end %>
+ -->

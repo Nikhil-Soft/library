@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daily Expenses</title>
+    <%#= wicked_pdf_stylesheet_link_tag "pdf" %>
+  </head>
+  <body>
+    <div id="header">
+      <!--= wicked_pdf_image_tag 'thumbnail.png', height: "30", width: "auto"-->
+    </div>
+    <%= yield %>
+  </body>
+</html>

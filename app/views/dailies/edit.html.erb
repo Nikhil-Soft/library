@@ -1,0 +1,12 @@
+<div class="user_salary">
+			<h2>Edit Expenses</h2>
+		<div class="salary-block d-flex">
+			<%= form_with model: @daily do |form| %>
+				<%= form.date_field :date, class: "custom-field", placeholder: "Change Date "%>
+				<%= form.text_field :details, class: "custom-field", placeholder: "Change Datails "%>
+				<%= form.text_field :expenses, class: "custom-field", placeholder: "Change Expenses "%>
+				<%= form.submit "Sumbit", class: "custom-btn" %>
+			<%end%>
+		</div>
+	</div>
+</div>

@@ -14,3 +14,106 @@ body{
 .nav-items .nav-item .nav-link {
 	color: #888;
 }
+.d-flex{
+	display: flex;
+}
+.justify-content-between{
+	justify-content: space-between;
+}
+.align-item-flex{
+	align-items: flex;
+}
+.daily-entry-block {
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	border: 1px solid #1D1CE5;
+	background: #1D1CE5;
+	position: absolute;
+	top:  50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.daily-entry-block h2 {
+	color: #1D1CE5;
+	margin-bottom: 20px;
+	color: #fff;
+}
+
+.daily_entry{
+	max-width: 600px;
+	width: 100%;
+	margin: 0 auto;
+	background: #EDEDED;
+	padding: 20px;
+
+}
+.custom-label {
+	display: block;
+	margin-bottom: 4px;
+	color: #06283D;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+}
+.custom-field {
+	max-width: 100%;
+	width: 100% !important;
+	min-height: 40px !important;
+	height: auto;
+	border: 1px solid rgba(6, 40, 61, 0.18);
+	border-radius: 4px !important;
+	color: #06283D;
+	padding: 6px;
+	margin-bottom: 4px;
+}
+.custom-btn{
+	border-radius: 20px;
+	min-width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	margin: 0 auto;
+	background: #1D1CE5 !important;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 400;
+	border: none !important;
+	position: relative;
+	transition: all 0.3s ease;
+	margin-bottom: 4px;
+}
+.custom-btn:hover {
+	cursor: pointer;
+	transition: all 0.3s ease;
+	min-width: 150px;
+	letter-spacing: 5px;
+}
+.text-center{
+	text-align: center !important;
+}
+.custom-back-btn{
+	display: inline-block;
+	border-radius: 20px;
+	min-width: 100px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	margin: 0 auto;
+	background: #3C4048 !important;
+	text-transform: uppercase;
+	color: #fff !important;
+	font-weight: 400;
+	border: none !important;
+	text-decoration: none !important;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+.custom-back-btn:hover{
+	cursor: pointer;
+	background: #fff !important;
+	color: #3C4048 !important;
+	transition: all 0.3s ease;
+	border: 1px solid #3C4048 !important;
+}

@@ -1,0 +1,40 @@
+<div class="d-flex justify-content-between align-item-flex">
+	<h1 class="text-danger">Daily Expenses</h1>
+</div>
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" style="max-width: 1000px; width: 100; margin: 0 auto;" >
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Details</th>
+			<th>Edit</th>
+			<th>Delete</th>
+			<th>Expenses</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @daily.order('date DESC').each do |daily| %>
+			<tr>
+				<td><%= link_to daily.date.strftime('%e-%b-%Y'), daily_path(daily) %> </td> 
+				<td><%= daily.date.strftime('%I:%M%p') %></td>
+				<td><%= daily.details %> </td>
+				<td><%= link_to 'edit', edit_daily_path(daily) %> </td>
+				<td><%= link_to 'delete', daily_path(daily), data: {
+					'turbo-confirm': "Are you sure ?",
+					turbo_method: :delete
+				} %></td>
+				<td><%= daily.expenses %> </td>
+ </td>
+			</tr>
+		<%end%>
+		<tr>
+			<td > Remaining Salary : <strong> <%= @remaining = current_user.salary.present? ? (current_user.salary - check_limit) : "Nil" %> </strong> </td>
+			<td colspan="5" align="right"> Monthly Total : <strong> <%= @monthly %> </strong> </td> 
+		</tr>
+	</tbody>
+</table>
+
+<p><%= link_to 'Add Expenses', new_daily_path %></p>
+<p><%= link_to 'Add Salary', edit_user_path(current_user) %></p>
+<p><%= link_to "Download PDF", dailies_path(@daily, format: :pdf) %></p>
+<%= link_to 'Send mail', send_daily_path(@daily), class: "big-button"%>

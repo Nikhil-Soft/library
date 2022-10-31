@@ -86,3 +86,6 @@ gem "letter_opener", group: :development
 
 gem 'razorpay'
 gem 'pry'
+
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

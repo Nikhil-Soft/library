@@ -42,6 +42,15 @@ Rails.application.routes.draw do
     resources :pictures
   end
 
+  resources :dailies
+
+  get "send_daily", to: 'dailies#send_daily', as: 'send_daily'
+  
+  resources :users
+
+  # put 'edit', to:"users#edit", as: 'edit'
+  
+
   # resources :profile_pictures
   
 end

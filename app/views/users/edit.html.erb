@@ -1,0 +1,10 @@
+<div class="user_salary">
+			<h2>Salary</h2>
+		<div class="salary-block d-flex">
+			<%= form_with model: @user do |form| %>
+				<%= form.text_field :salary, class: "custom-field", placeholder: "Add salary (Ex: 50,000)"%>
+				<%= form.submit "Sumbit", class: "custom-btn" %>
+			<%end%>
+		</div>
+	</div>
+</div>
