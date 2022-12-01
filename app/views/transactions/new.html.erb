@@ -1,0 +1,21 @@
+
+<%= form_with model: @transaction do |form| %>
+
+	<p>
+		<%= form.label :Name %>
+		<%= form.text_field :name %>
+	</p>
+	<p>
+		<%= form.hidden_field :daily_id, :value => @daily.id %>
+	</p>
+
+	<p>
+		<%= form.label :Send_to %>
+		<%= form.select :send_to_id, options_for_select(User.all.map{|b| [b.email, b.id]}) %>
+	</p>
+
+	
+	<p><%= form.submit %></p>
+<%end%>
+
+<p><%= link_to 'Back', transactions_path %></p>

@@ -2,7 +2,7 @@
 
 <h4>Polymorphic Association</h4>
 
-<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" style="max-width: 1000px; width: 100; margin: 0 auto;" >
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" style="max-width: 1000px; width: 100%; margin: 0 auto;" >
 	<thead>
 		<tr>
 			<th>SN</th>
@@ -18,10 +18,10 @@
 		<% @actors.each do |actor| %>
 			<tr>
 				<td><strong><%= actor.id %></strong></td>
-				<td><strong>Name: </strong> <%= actor.name %></td>
-				<td><strong>Name: </strong> <%= actor.movies_count %></td>
-				<td><strong>Name: </strong> <%= actor.age %></td>
-				<td><strong>Name: </strong> <%= actor.experiences %></td>
+				<td><%= actor.name %></td>
+				<td><%= actor.movies_count %></td>
+				<td><%= actor.age %></td>
+				<td><%= actor.experiences %></td>
 				<td><%= link_to 'Show', actor_path(actor) %></td>
 			</tr>
 		<%end%>

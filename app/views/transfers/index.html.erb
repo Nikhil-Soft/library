@@ -1,0 +1,31 @@
+<h1 class="text-danger">All Transfers</h1>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee" >
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Amount</th>
+			<th>Details</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @transfers.each do |transfer| %>
+			<tr>
+				<td><%= transfer.name %></td>
+				<td><%= transfer.status %></td>
+				<td><%= transfer.amount %></td>
+				<td><%= transfer.details %></td>
+				<td><%= link_to 'edit', edit_transfer_path(transfer) %> </td>
+				<td><%= link_to 'delete', transfer_path(transfer), data: {
+					'turbo-confirm': "Are you sure ?",
+					turbo_method: :delete
+				} %></td>
+			</tr>
+		<%end%>	
+	</tbody>
+</table>
+
+<p><%= link_to 'Add Transfers', new_transfer_path %></p>

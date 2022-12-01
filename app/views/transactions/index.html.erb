@@ -1,0 +1,24 @@
+<h1 class="text-danger">All Transctions</h1>
+
+<h4>Multiple Association</h4>
+
+<table cellpadding="0" cellspacing="0" border="1px" bgcolor="#eee">
+	<thead>
+		<tr>
+			<th>SN</th>
+			<th>Name</th>
+			<th>Send To</th>
+			<th>Shared Expenses</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @transactions.each do |transaction| %>
+			<tr>
+				<td><strong><%= transaction.id %></strong></td>
+				<td><%= transaction.name %></td>
+				<td><%= transaction.send_to.email %></td>
+				<td><%= transaction.daily.expenses %></td>
+			</tr>
+		<%end%>
+	</tbody>
+</table>

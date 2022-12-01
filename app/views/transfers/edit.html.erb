@@ -1,0 +1,13 @@
+<div class="user_salary">
+			<h2>Edit Status</h2>
+		<div class="salary-block d-flex">
+			<%= form_with model: @transfer do |form| %>
+				<%= form.text_field :name, class: "custom-field", placeholder: " Change Name "%>
+				<%= form.text_field :status, class: "custom-field", placeholder: " Change Status "%>
+				<%= form.text_field :amount, class: "custom-field", placeholder: " Change Amount "%>
+				<%= form.text_field :details, class: "custom-field", placeholder: "Change Datails "%>
+				<%= form.submit "Sumbit", class: "custom-btn" %>
+			<%end%>
+		</div>
+	</div>
+</div>

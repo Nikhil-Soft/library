@@ -1,0 +1,42 @@
+<div class="daily-entry-block">
+	<center>
+		<h2>Transfer Entry</h2>
+	</center>
+			<%= form_with model: @transfer do |form| %>
+	<table width="600px" class="daily_entry" cellspacing="0" cellspacing="0" border="0">
+		<tbody>
+				<tr>
+					<td>
+						<p class="custom-label"><%= form.label :Name %></p>
+						<p><%= form.text_field :name, class:"custom-field", placeholder: "Name" %></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p class="custom-label"><%= form.label :Status %></p>
+					<p><%= form.text_field :status, class:"custom-field", placeholder: "recived or transfered" %> </p></td>
+				</tr>
+				<tr>
+					<td>
+						<p class="custom-label"><%= form.label :Amount %></p>
+						<p><%= form.text_field :amount, class:"custom-field", placeholder: "Amount" %></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p class="custom-label"><%= form.label :Details %></p>
+						<p><%= form.text_field :details, class:"custom-field", placeholder: "Details" %></p>
+					</td>
+				</tr>
+				<tr>
+					<td><p class="text-center"><%= form.submit "Submit", class: "custom-btn" %></p></td>
+				</tr>
+			<tr>
+				<td>
+					<p><%= link_to 'Back', transfers_path, class: "custom-back-btn" %></p>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+			<%end%>
+</div>

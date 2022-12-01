@@ -15,8 +15,8 @@
 	<tbody>
 		<% @daily.order('date DESC').each do |daily| %>
 			<tr>
-				<td><%= link_to daily.date.strftime('%e-%b-%Y'), daily_path(daily) %> </td> 
-				<td><%= daily.date.strftime('%I:%M%p') %></td>
+				<td><%= link_to daily&.date&.strftime('%e-%b-%Y'), daily_path(daily) %> </td> 
+				<td><%= daily&.date&.strftime('%I:%M%p') %></td>
 				<td><%= daily.details %> </td>
 				<td><%= link_to 'edit', edit_daily_path(daily) %> </td>
 				<td><%= link_to 'delete', daily_path(daily), data: {
@@ -34,7 +34,17 @@
 	</tbody>
 </table>
 
+<h1>Search</h1>
+
+<%= form_tag dailies_path, :method => "get" do %>
+	<%= label_tag(:search, "Search") %>
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag("Search", :details => nil) %>
+<% end %>
+
 <p><%= link_to 'Add Expenses', new_daily_path %></p>
 <p><%= link_to 'Add Salary', edit_user_path(current_user) %></p>
 <p><%= link_to "Download PDF", dailies_path(@daily, format: :pdf) %></p>
-<%= link_to 'Send mail', send_daily_path(@daily), class: "big-button"%>
+<p><%= link_to 'Send mail', send_daily_path(@daily), class: "big-button"%></p>
+<p><%= link_to 'Transfer Details', transfers_path %> </p>
+<p><%= link_to 'Transaction Details', transactions_path %></p>

@@ -5,7 +5,7 @@ class DailiesController < ApplicationController
 	include DailiesHelper
 
 	def index
-		@daily = current_user.dailies
+		@daily = current_user.dailies.search(params[:search], current_user)
 		respond_to do |format|
       		format.html
       		format.pdf do
@@ -60,10 +60,7 @@ class DailiesController < ApplicationController
 	end
 
 	def send_daily
-
-		# pdf_html = ActionController::Base.new.render_to_string(template: 'dailies/index', layout: 'pdf')
-		# pdf = WickedPdf.new.pdf_from_string(pdf_html)
-		# send_data pdf, filename: 'daily.pdf'
+		
 		@monthly = check_limit
 		UserMailer.with(user: current_user, daily: current_user.dailies, monthly: @monthly).send_daily.deliver_now
 		redirect_to dailies_path
@@ -75,7 +72,7 @@ class DailiesController < ApplicationController
 	private
 
 	def daily_params
-		params.require(:daily).permit(:date, :expenses, :details)
+		params.require(:daily).permit(:date, :expenses, :details, :search)
 	end
 
 end

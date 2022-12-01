@@ -12,4 +12,8 @@ class User < ApplicationRecord
 
   has_one :cart
   has_many :dailies
+
+  has_many :receive_transaction, class_name: "Transaction", foreign_key: "send_to_id"
+  has_many :transfer_transaction, class_name: "Transaction", foreign_key: "send_by_id"
+
 end

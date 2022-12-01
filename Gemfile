@@ -89,3 +89,9 @@ gem 'pry'
 
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+
+gem 'whenever', require: false
+gem 'sidekiq-cron'
+
+gem 'sidekiq', '~> 6.5.5'
+

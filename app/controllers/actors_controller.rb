@@ -1,4 +1,4 @@
-class ActorsController < ApplicationController
+	class ActorsController < ApplicationController
 
 	def index
 		@actors = Actor.all 
